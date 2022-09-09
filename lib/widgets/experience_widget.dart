@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:intl/intl.dart';
 
 import 'package:portfolio_website/models/experience/experience.dart';
+import 'package:portfolio_website/widgets/concentric_rotating_circles.dart';
 import 'package:portfolio_website/widgets/rotating_circle.dart';
 
 class ExperienceWidget extends StatelessWidget {
@@ -24,7 +25,18 @@ class ExperienceWidget extends StatelessWidget {
       padding: const EdgeInsets.all(15.0),
       child: Row(
         children: [
-          CircularSpinner(),
+          // CircularSpinner(
+          //   child: Text(
+          //     'HELLO',
+          //     style: TextStyle(color: Colors.black),
+          //   ),
+          // ),
+          ConcentricRotatingCircles(
+            child: Text(
+              'HELLO',
+              // style: TextStyle(color: Colors.black),
+            ),
+          ),
           Container(
             // color: Colors.black,
             margin: const EdgeInsets.all(10),

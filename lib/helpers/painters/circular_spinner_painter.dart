@@ -10,11 +10,11 @@ class CircularSpinnerPainter extends CustomPainter {
     var hollowPaint = Paint()
       ..color = const Color(0xffE62B1E)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 17;
+      ..strokeWidth = 3;
     double maxRadius = math.min(size.width, size.height) / 2;
     Offset center = Offset(maxRadius, maxRadius);
     Rect rect = Rect.fromCircle(center: center, radius: maxRadius);
-    int n = 7;
+    int n = 20;
     double gapWidth = math.pi / ((n));
     double start = -math.pi / 2;
     double sweep = (2 * math.pi - gapWidth * (n)) / n;
