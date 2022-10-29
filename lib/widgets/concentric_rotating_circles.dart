@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -9,21 +10,38 @@ class ConcentricRotatingCircles extends StatelessWidget {
   const ConcentricRotatingCircles({
     Key? key,
     this.child,
+    required this.outerDiameter,
+    required this.innerDiameter,
   }) : super(key: key);
   final Widget? child;
+  final double outerDiameter;
+  final double innerDiameter;
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        RotatingCircle(diameter: 300),
-        RotatingCircle(
-          diameter: 280,
-          clockwise: false,
+    return Container(
+      height: outerDiameter + 30,
+      width: outerDiameter + 30,
+      child: Center(
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            RotatingCircle(diameter: outerDiameter),
+            RotatingCircle(
+              diameter: innerDiameter,
+              clockwise: false,
+            ),
+            // AutoSizeText(data)
+            if (child != null)
+              Container(
+                height: innerDiameter - 30,
+                width: innerDiameter - 30,
+                alignment: Alignment.center,
+                child: child!,
+              ),
+            // child,
+          ],
         ),
-        if (child != null) child!,
-        // child,
-      ],
+      ),
     );
   }
 }

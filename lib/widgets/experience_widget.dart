@@ -32,36 +32,37 @@ class ExperienceWidget extends StatelessWidget {
           //   ),
           // ),
           ConcentricRotatingCircles(
-            child: Text(
-              'HELLO',
-              // style: TextStyle(color: Colors.black),
-            ),
+            child: exp.getHighlightedWidget(),
+            outerDiameter: 100,
+            innerDiameter: 80,
           ),
-          Container(
-            // color: Colors.black,
-            margin: const EdgeInsets.all(10),
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Colors.black,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Text(
-                //   exp.type,
-                // ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(getDateText(exp.start)),
-                    Text(' - '),
-                    Text(getDateText(exp.end)),
-                  ],
-                ),
-                // ...exp.skillsUsed.map((e) => Text(e)).toList(),
-                ...exp.bulletPoints.map((e) => Text("\u2022 $e\n")).toList(),
-              ],
+          Flexible(
+            child: Container(
+              // color: Colors.black,
+              margin: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                // color: Colors.black,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Text(
+                  //   exp.type,
+                  // ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(getDateText(exp.start)),
+                      Text(' - '),
+                      Text(getDateText(exp.end)),
+                    ],
+                  ),
+                  // ...exp.skillsUsed.map((e) => Text(e)).toList(),
+                  ...exp.bulletPoints.map((e) => Text("\u2022 $e\n")).toList(),
+                ],
+              ),
             ),
           ),
         ],

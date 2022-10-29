@@ -97,11 +97,13 @@
   "links": [
     {
       "title": "LinkedIn",
-      "url": "https://www.linkedin.com/in/satvik-gupta-063033195/"
+      "url": "https://www.linkedin.com/in/satvik-gupta-063033195/",
+      "linkLogoUrl": "https://cdn-icons-png.flaticon.com/512/174/174857.png"
     },
     {
       "title": "GitHub",
-      "url": "https://github.com/Satvik2101"
+      "url": "https://github.com/Satvik2101",
+      "linkLogoUrl": "https://cdn-icons-png.flaticon.com/512/25/25231.png"
     }
   ]
 }

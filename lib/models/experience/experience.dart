@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
 import 'package:portfolio_website/models/link.dart';
 
@@ -37,7 +38,8 @@ abstract class Experience {
       case 'PersonalProject':
         return PersonalProject.fromMap(mp);
       default:
-        throw Exception('Type argument must be provided in Experience');
+        throw Exception('Invalid type argument in Experience ${mp['type']}');
     }
   }
+  Widget getHighlightedWidget();
 }

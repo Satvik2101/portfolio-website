@@ -1,5 +1,8 @@
 import 'dart:convert';
 
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:portfolio_website/models/experience/experience.dart';
 
 import '../link.dart';
@@ -35,5 +38,10 @@ class PersonalProject extends Experience {
   factory PersonalProject.fromJson(String jsonData) {
     Map<String, dynamic> data = jsonDecode(jsonData);
     return PersonalProject.fromMap(data);
+  }
+
+  @override
+  Widget getHighlightedWidget() {
+    return AutoSizeText(title);
   }
 }

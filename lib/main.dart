@@ -4,6 +4,7 @@ import 'package:portfolio_website/helpers/constants.dart';
 
 import 'package:portfolio_website/helpers/data.dart';
 import 'package:portfolio_website/helpers/ui_helper.dart';
+import 'package:portfolio_website/widgets/concentric_rotating_circles.dart';
 import 'package:portfolio_website/widgets/experience_widget.dart';
 
 import 'models/person.dart';
@@ -25,13 +26,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-          primarySwatch: UIHelper.generateMaterialColor(primaryColor),
-          textTheme: GoogleFonts.sourceCodeProTextTheme().copyWith(
-            bodyText2: GoogleFonts.sourceCodePro(
-              color: Colors.white,
-              fontSize: 16,
-            ),
-          )),
+        primarySwatch: UIHelper.generateMaterialColor(primaryColor),
+        // textTheme: GoogleFonts.sourceCodeProTextTheme().copyWith(
+        //     // bodyText2: GoogleFonts.sourceCodePro(
+        //     //   color: Colors.white,
+        //     //   fontSize: 16,
+        //     // ),
+        //     ),
+      ),
       home: MyHomePage(person: person),
     );
   }
@@ -46,7 +48,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      // backgroundColor: Colors.black,
       appBar: AppBar(
         title: Text("Portfolio Website"),
       ),
@@ -55,6 +57,14 @@ class MyHomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              ConcentricRotatingCircles(
+                innerDiameter: 280,
+                outerDiameter: 300,
+                child: CircleAvatar(
+                  minRadius: 200,
+                  backgroundImage: NetworkImage(person.profilePictureUrl),
+                ),
+              ),
               Text(
                 person.name,
               ),
@@ -68,6 +78,11 @@ class MyHomePage extends StatelessWidget {
             ],
           ),
         ),
+        // child: Container(
+        //   height: 100,
+        //   width: 100,
+        //   color: Colors.red,
+        // ),
       ),
     );
   }

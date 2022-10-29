@@ -2,12 +2,15 @@
 
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+
 import '../../link.dart';
 import 'work_experience.dart';
 
 class CompanyPost extends WorkExperience {
   CompanyPost({
-    required super.companyName,
+    required super.entityName,
     required super.position,
     required super.bulletPoints,
     required super.start,
@@ -17,10 +20,11 @@ class CompanyPost extends WorkExperience {
     // required super.type,
   }) : super(type: "CompanyPost");
 
+  String get companyName => entityName;
   factory CompanyPost.fromMap(Map<String, dynamic> data) {
     try {
       return CompanyPost(
-        companyName: data['companyName'],
+        entityName: data['entityName'],
         position: data['position'],
         bulletPoints: List<String>.from(data['bulletPoints'] ?? []),
         start: DateTime.parse(data['start']),
@@ -38,5 +42,10 @@ class CompanyPost extends WorkExperience {
   factory CompanyPost.fromJson(String jsonData) {
     Map<String, dynamic> data = jsonDecode(jsonData);
     return CompanyPost.fromMap(data);
+  }
+
+  @override
+  Widget getHighlightedWidget() {
+    return Text(entityName);
   }
 }

@@ -39,7 +39,7 @@ String rawData = '''
   "experiences": [
     {
       "type": "CompanyPost",
-      "companyName": "CRIS",
+      "entityName": "CRIS",
       "position": "Flutter Dev Intern",
       "start": "20210807",
       "end": "20211107",
@@ -51,7 +51,7 @@ String rawData = '''
     },
     {
       "type": "CompanyPost",
-      "companyName": "IIT-Delhi",
+      "entityName": "IIT-Delhi",
       "position": "App Dev Intern",
       "start": "20211207",
       "end": "20220307",
@@ -75,7 +75,7 @@ String rawData = '''
     },
     {
       "type": "SocietyPoR",
-      "companyName": "TEDxDTU",
+      "entityName": "TEDxDTU",
       "position": "Head of Technology",
       "start": "20211207",
       "end": "20240307",

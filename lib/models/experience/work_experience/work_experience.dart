@@ -1,10 +1,10 @@
 import 'package:portfolio_website/models/experience/experience.dart';
 
 abstract class WorkExperience extends Experience {
-  final String companyName;
+  final String entityName;
   final String position;
   WorkExperience({
-    required this.companyName,
+    required this.entityName,
     required this.position,
     required super.bulletPoints,
     required super.start,
@@ -13,4 +13,6 @@ abstract class WorkExperience extends Experience {
     required super.skillsUsed,
     required super.type,
   });
+
+  // abstract Widget get
 }
